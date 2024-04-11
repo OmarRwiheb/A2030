@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "Cooper";
+  src: url("/assets/fonts/CooperBlackBT.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("/assets/fonts/Poppins-Bold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-reg";
+  src: url("/assets/fonts/Poppins-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins-light";
+  src: url("/assets/fonts/Poppins-Light.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mistrully";
+  src: url("../assets/fonts/Mistrully.ttf");
+  font-display: swap;
+}
+
+:root {
+  --beige: #f7f7f7;
+  --blue: #a1d4d5;
+  --green: #8ec36b;
+  --yellow: #f6c841;
+  --red: #f16b50;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #8ec369;
+  }
+  50% {
+    background-color: #f06d57;
+  }
+  100% {
+    background-color: #a1d4d5;
+  }
+}
+
+body {
+  background-color: var(--beige);
+  scroll-behavior: smooth;
+  transition: background-color 1s linear 0s;
+  overflow-x: hidden;
+  animation: colorChange 10s infinite;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 60px 15px;
+}
+
+/* small */
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium */
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* header  */
+
+header {
+  position: absolute;
+  z-index: 9999;
+  padding: 0.3rem 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+header nav {
+  margin: 10px auto;
+  /* padding: 0 2rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 83%;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header nav img {
+  width: 75px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 25px;
+  -webkit-box-shadow: -7px 7px 0px 1px rgba(0, 0, 0, 0.97);
+  -moz-box-shadow: -7px 7px 0px 1px rgba(0, 0, 0, 0.97);
+  box-shadow: -7px 7px 0px 1px rgba(0, 0, 0, 0.97);
+}
+
+nav ul a {
+  font-family: "Cooper";
+  text-decoration: none;
+  padding: 0 0.8rem;
+  color: black;
+}
+
+nav ul li:nth-child(1) a {
+  background: var(--blue);
+  padding: 6px 8px;
+  border-radius: 25px;
+  transition: 0.8s;
+}
+
+nav ul li:nth-child(1) a:hover {
+  color: white;
+  background-color: black;
+}
+
+header .container {
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+section {
+  height: 100vh;
+}
+
+#container {
+  height: 100%;
+  background-color: #f0f0f0;
+  position: relative;
+}
+.cursor-image {
+  position: absolute;
+  pointer-events: none;
+  width: 250px;
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.1s ease;
+}
+
+.hero {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.her-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.her-content h2 {
+  order: 2;
+  font-family: "cooper";
+  font-size: 100px;
+  line-height: 0.8;
+}
+
+.her-content h2 span {
+  font-family: "Cooper";
+  font-size: 135px;
+}
+
+.her-content p {
+  font-family: "Mistrully";
+  font-weight: 800;
+  font-size: 69px;
+}
+
+@media (max-width: 600px) {
+  .her-content h2 {
+    font-size: 60px;
+  }
+  .her-content p {
+    font-size: 45px;
+  }
+}
+
+footer {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  text-align: center;
+  padding-bottom: 8px;
+  left: 50%;
+}
+
+footer a {
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 900;
+  color: black;
+}

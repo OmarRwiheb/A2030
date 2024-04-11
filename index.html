@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2030 Dreaming Process</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="game/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <img src="assets/img/logo.png" alt="" />
+          <!-- <ul>
+            <li><a href="">Register</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Speakers</a></li>
+            <li><a href="">Blog</a></li>
+          </ul> -->
+          <div class="empty"></div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="hero-sec" data-backgroundColor="#f7f7f7">
+        <div class="her-content">
+          <h2>Dreaming<br />A2030</h2>
+          <p>Stay Tuned</p>
+
+          <div style="margin-top: 25px">
+            <div class="game-container">
+              <div
+                class="submit-username-container text-center"
+                id="submit-username-container"
+              >
+                <input
+                  name="username"
+                  value=""
+                  id="username"
+                  class="input-game form-control text-center"
+                  placeholder="Username"
+                />
+                <button class="mt-1 btn-game primary" id="usernameBtn">
+                  Submit
+                </button>
+              </div>
+              <canvas class="game" id="game"></canvas>
+              <div class="blackScreen" id="black-screen"></div>
+              <span class="btn-start primary" id="startBtn"
+                >Click to start</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="about" data-backgroundColor="#a1d4d5">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-left">
+              <h2>About Us</h2>
+              <ul>
+                <li>
+                  <h3>Lorem ipsum dolor</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit, pariatur.
+                  </p>
+                </li>
+                <li>
+                  <h3>Lorem ipsum dolor</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit, pariatur.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="about-right">
+              <img src="assets/img/Screenshot 2024-03-23 235733.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="events" data-backgroundColor="#8ec36b">
+        <h2>Events</h2>
+      </section>
+      <section class="speakers" data-backgroundColor="#f6c841">
+        <h2>Speakers</h2>
+      </section>
+      <section class="game" data-backgroundColor="#F16B50">
+        <h2>Game</h2>
+      </section> -->
+    </main>
+    <footer>
+      <p style="color: black">
+        Made with 🖤, Powered by AIESEC,<br />
+        Developed by
+        <a
+          class="omar"
+          href="https://www.linkedin.com/in/omar-rwiheb-698a761b9/"
+          >Omar Rwiheb</a
+        >
+        and
+        <a class="omar" href="https://www.linkedin.com/in/limam-ahmed/"
+          >Ahmed Limam</a
+        >
+      </p>
+    </footer>
+
+    <script src="game/game.js" type="module"></script>
+
+    <script src="assets/script.js"></script>
+    <!-- <script>
+      const sections = document.querySelectorAll("section");
+
+      const options = {
+        root: null,
+        threshold: 0,
+        rootMargin: "-200px",
+      };
+
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          document.body.style.background = entry.target.dataset.backgroundcolor;
+        });
+      }, options);
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+
+      var container = document.getElementById("hero-sec");
+      var imageUrls = [
+        "assets/img/mouse/image1.png",
+        "assets/img/mouse/image2.png",
+        "assets/img/mouse/image3.png",
+        "assets/img/mouse/image4.png",
+        "assets/img/mouse/image5.png",
+        "assets/img/mouse/image6.png",
+        "assets/img/mouse/image7.png",
+        // Add more image URLs as needed
+      ];
+      var rotateDegree = [-90, -45, -30, 0, 30, 45, 90];
+      var mouseMovementCounter = 0;
+      var randomIndex = 0;
+      var imageCounter = 0;
+
+      document.addEventListener("mousemove", throttle(handleMouseMove, 120));
+      function handleMouseMove(event) {
+        var rect = container.getBoundingClientRect();
+        if (
+          event.clientX >= rect.left &&
+          event.clientX <= rect.right &&
+          event.clientY >= rect.top &&
+          event.clientY <= rect.bottom
+        ) {
+          var x = event.clientX;
+          var y = event.clientY;
+
+          var imageContainer = document.createElement("div");
+          var image = document.createElement("div");
+          image.classList.add("cursor-image");
+          imageContainer.classList.add("cursor-image-container");
+          imageContainer.appendChild(image);
+          image.style.backgroundImage = "url('" + imageUrls[randomIndex] + "')";
+          image.style.left = x + "px";
+          image.style.top = y + "px";
+          image.style.transform = `translate(-50%, -50%) rotate(${
+            rotateDegree[Math.floor(Math.random() * rotateDegree.length)]
+          }deg)`;
+          image.dataset.speed = "2";
+          container.appendChild(imageContainer);
+          if (imageCounter >= 3) {
+            randomIndex++;
+            if (randomIndex == imageUrls.length) randomIndex = 0;
+            imageCounter = 0;
+          }
+          imageCounter++;
+          setTimeout(function () {
+            container.removeChild(imageContainer);
+          }, 2000);
+        }
+      }
+
+      function throttle(func, limit) {
+        var lastFunc;
+        var lastRan;
+        return function () {
+          var context = this;
+          var args = arguments;
+          if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function () {
+              if (Date.now() - lastRan >= limit) {
+                func.apply(context, args);
+                lastRan = Date.now();
+              }
+            }, limit - (Date.now() - lastRan));
+          }
+        };
+      }
+
+      document.addEventListener("mousemove", parallax);
+      function parallax(e) {
+        this.querySelectorAll(".cursor-image").forEach((image) => {
+          const speed = image.getAttribute("data-speed");
+          const x = e.clientX * speed * -0.008;
+          const y = e.clientY * speed * -0.008;
+          image.parentElement.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+    </script> -->
+  </body>
+</html>
