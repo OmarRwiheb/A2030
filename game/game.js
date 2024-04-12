@@ -1,3 +1,10 @@
+// Make the page not scroll down when you press space
+window.addEventListener('keydown', function(e) {
+  if(e.keyCode == 32 && e.target == document.body) {
+    e.preventDefault();
+  }
+});
+
 import Player from "./Player.js";
 import Ground from "./Ground.js";
 import Background from "./Background.js";
