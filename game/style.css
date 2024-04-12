@@ -122,3 +122,9 @@ li {
   font-size: 30px;
   font-family: "poppins";
 }
+
+@media (max-width: 600px){
+  .game-div{
+    margin-top: 25px;
+  }
+}
