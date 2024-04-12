@@ -265,12 +265,12 @@ requestAnimationFrame(gameLoop);
 let usernameBtn = document.getElementById("usernameBtn");
 usernameBtn.addEventListener("click", function () {
   submit_username();
-  playedOnce = true;
 });
 
 let startBtn = document.getElementById("startBtn");
 startBtn.addEventListener("click", function () {
   start_game();
+  playedOnce = true;
 });
 
 function start_game() {
