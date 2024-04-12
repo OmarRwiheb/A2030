@@ -193,7 +193,14 @@ function clearScreen() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+var playedOnce = false;
+
 function gameLoop(currentTime) {
+
+  if (!document.hasFocus() && playedOnce) {
+    gameOver = true;
+  }
+  
   ctx.fillStyle = window
     .getComputedStyle(document.body, null)
     .getPropertyValue("background-color");
@@ -258,6 +265,7 @@ requestAnimationFrame(gameLoop);
 let usernameBtn = document.getElementById("usernameBtn");
 usernameBtn.addEventListener("click", function () {
   submit_username();
+  playedOnce = true;
 });
 
 let startBtn = document.getElementById("startBtn");
