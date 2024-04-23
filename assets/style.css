@@ -46,18 +46,18 @@
 
 @keyframes colorChange {
   0% {
-    background-color: #8ec369;
+    background-color: #182C79;
   }
   50% {
-    background-color: #f06d57;
+    background-color: #B3820D;
   }
   100% {
-    background-color: #a1d4d5;
+    background-color: #061049;
   }
 }
 
 body {
-  background-color: var(--beige);
+  background-color: #FFFFFF;
   scroll-behavior: smooth;
   transition: background-color 1s linear 0s;
   overflow-x: hidden;
