@@ -1,4 +1,46 @@
 @font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Black.ttf");
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Light.ttf");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato/Lato-Thin.ttf");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caliburn";
+  src: url("../fonts/Caliburn_EE/Caliburn-Bold.otf");
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Cooper";
   src: url("fonts/CooperBlackBT.ttf");
   font-display: swap;
@@ -135,7 +177,7 @@ header nav ul {
 }
 
 nav ul a {
-  font-family: "Cooper";
+  font-family: "Caliburn";
   text-decoration: none;
   padding: 0 0.8rem;
   color: black;
@@ -193,13 +235,13 @@ section {
 
 .her-content h2 {
   order: 2;
-  font-family: "Cooper";
+  font-family: "Caliburn";
   font-size: 100px;
   line-height: 0.8;
 }
 
 .her-content h2 span {
-  font-family: "Cooper";
+  font-family: "Caliburn";
   font-size: 135px;
 }
 
