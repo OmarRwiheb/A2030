@@ -61,7 +61,7 @@ body {
   scroll-behavior: smooth;
   transition: background-color 1s linear 0s;
   overflow-x: hidden;
-  animation: colorChange 10s infinite;
+/*   animation: colorChange 10s infinite; */
 }
 
 .container {
