@@ -38,9 +38,9 @@ const BACKGROUND_HEIGHT = 200;
 const BACKGROUND_SPEED = 0.1;
 
 const CACTI_CONFIG = [
-  { width: 48 / 1.2, height: 100 / 1.2, image: "game/images/cactus_1_white.png" },
-  { width: 98 / 1.2, height: 100 / 1.2, image: "game/images/cactus_2_white.png" },
-  { width: 68 / 1.2, height: 70 / 1.2, image: "game/images/cactus_3_white.png" },
+  { width: 48 / 1.2, height: 100 / 1.2, image: "game/images/cactus_1.png" },
+  { width: 98 / 1.2, height: 100 / 1.2, image: "game/images/cactus_2.png" },
+  { width: 68 / 1.2, height: 70 / 1.2, image: "game/images/cactus_3.png" },
 ];
 
 //Game Objects
@@ -151,7 +151,7 @@ function getScaleRatio() {
 function showGameOver() {
   const fontSize = 90 * scaleRatio;
   ctx.font = `${fontSize}px VT323`;
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "black";
   const x = canvas.width / 5.7;
   const y = canvas.height / 1.5;
   ctx.fillText("GAME OVER", x, y);
@@ -184,7 +184,7 @@ function reset() {
 function showStartGameText() {
   const fontSize = 30 * scaleRatio;
   ctx.font = `${fontSize}px VT323`;
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "black";
   const x = canvas.width / 9;
   const y = canvas.height / 2;
   ctx.fillText("Tap Screen or Press Space To Jump", x, y);
