@@ -208,9 +208,13 @@ function gameLoop(currentTime) {
     gameOver = true;
   }
 
+  ctx.fillStyle = "black";
+
+  /*
   ctx.fillStyle = window
     .getComputedStyle(document.body, null)
     .getPropertyValue("background-color");
+  */
 
   if (previousTime === null) {
     previousTime = currentTime;
